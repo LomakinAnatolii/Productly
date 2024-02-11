@@ -1,0 +1,80 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-family: map-get($fonts, "inter"), "Open Sans", sans-serif;
+  font-size: map-get($fonts, "font-size");
+  font-weight: map-get($fonts, "regular");
+  line-height: map-get($fonts, "line-height");
+  color: map-get($color, "text-dark");
+  background-color: map-get($color, "background-body");
+  overflow-x: hidden;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a, button, input {
+  font-family: inherit;
+  color: inherit;
+}
+
+button {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6, p, figure, dl, dt, dd, ul, li, ol, button, fieldset, legend {
+  margin: 0;
+  padding: 0;
+}
+
+ul, li, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+input, label {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

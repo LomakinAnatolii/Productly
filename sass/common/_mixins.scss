@@ -1,0 +1,56 @@
+// mixin for retina in css
+@mixin retina($density: 2){
+  @media
+    only screen and (-webkit-min-device-pixel-ratio: $density),
+    only screen and (min--moz-device-pixel-ratio: $density),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: $density),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: #{$density}dppx) {
+      @content
+  }
+};
+
+// mixin for media in css
+@mixin max_width($max_width) {
+  @media screen and (max-width: $max_width) {
+    @content
+  }
+};
+
+@mixin min_width($min_width) {
+  @media screen and (min-width: $min_width) {
+    @content
+  }
+};
+
+// mixin for for calculating adaptive values in css (rem)
+@function size_rem($min, $width, $max) {
+	$min_rem: #{$min + rem};
+	$max_rem: #{$max + rem};
+	$width_vw: #{calc(round(($max * 16) / ($width / 100) * 100000) / 100000) + vw};
+	@return clamp($min_rem, $width_vw, $max_rem);
+};
+
+// mixin for for calculating adaptive value in css (em)
+@function size_em($min, $width, $max) {
+	$min_rem: #{$min + em};
+	$max_rem: #{$max + em};
+	$width_vw: #{calc(round(($max * 16) / ($width / 100) * 100000) / 100000) + vw};
+	@return clamp($min_rem, $width_vw, $max_rem);
+};
+
+// mixin for calculating value em in css
+@function font_size($em,$px) {
+  $res: #{calc($px / $em)};
+  $res_em: #{$res + em};
+  @return $res_em;
+};
+
+// mixin for calculating value rem in css
+@function block_size($rem,$px) {
+  $res: #{calc($px / $rem)};
+  $res_rem: #{$res + rem};
+  @return $res_rem;
+};
+

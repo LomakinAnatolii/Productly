@@ -1,0 +1,28 @@
+// 100: Thin;
+// 200: Extra Light (Ultra Light);
+// 300: Light;
+// 400: Normal;
+// 500: Medium;
+// 600: Semi Bold (Demi Bold);
+// 700: Bold;
+// 800: Extra Bold (Ultra Bold);
+// 900: Black (Heavy).
+
+$fonts: (
+  "Open-Sans" "Open-Sans-Regular" "400" "normal",
+  "Open-Sans" "Open-Sans-Semi-Bold" "600" "normal",
+  "Open-Sans" "Open-Sans-Bold" "700" "normal",
+  "Poppins" "Poppins-Regular" "400" "normal",
+  "Poppins" "Poppins-Semi-Bold" "600" "normal",
+  "Poppins" "Poppins-Bold" "700" "normal",
+);
+
+@each $font_name, $file_name, $weight, $style in $fonts {
+  @font-face {
+    font-family: $font_name;
+    font-style: $file_name;
+    font-weight: #{$weight};
+    src: url("../fonts/#{$file_name}.woff2") format("woff2"), url("../fonts/#{$file_name}.woff") format("woff");
+    font-display: swap;
+  }
+};

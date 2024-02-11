@@ -1,0 +1,23 @@
+$color: (
+);
+
+$fonts: (
+  "open-sans": "Open-Sans",
+  "poppins": "Poppins",
+  "normal": 400,
+  "semi-bold": 600,
+  "bold": 700,
+  "font-size": font_size(16, 16),
+  "title": font_size(16, 34),
+);
+
+$breakpoints: (
+  "1440": 1440px,
+  "1430": 1430px,
+  "1000": 1000px,
+  "950": 950px,
+  "769": 769px,
+  "768": 768px,
+  "650": 650px,
+  "380": 380px
+);
